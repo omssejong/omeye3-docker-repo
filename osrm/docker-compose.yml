@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - "/opt/oms/omeye/.docker/osrm/pbf:/data"
+      - "/opt/oms/omeye/.docker/osrm/car:/data"
     command: osrm-routed --algorithm mld /data/south-korea.osrm
     networks:
       - osrm-network
@@ -19,7 +19,7 @@ services:
     ports:
       - "5001:5000"
     volumes:
-      - "/opt/oms/omeye/.docker/osrm/pbf:/data"
+      - "/opt/oms/omeye/.docker/osrm/foot:/data"
     command: osrm-routed --algorithm mld /data/south-korea.osrm
     networks:
       - osrm-network
@@ -32,7 +32,7 @@ services:
     ports:
       - "5002:8080"
     volumes:
-      - "/opt/oms/omeye/.docker/osrm/pbf:/data"
+      - "/opt/oms/omeye/.docker/osrm/nominatim:/data"
     #  - "/opt/oms/omeye/.docker/osrm/nominatim/postgresql.conf:/etc/postgresql/postgresql.conf"
     #command: bash -c "cp /etc/postgresql/postgresql.conf /var/lib/postgresql/16/main/postgresql.conf && /app/start.sh"
     environment:
