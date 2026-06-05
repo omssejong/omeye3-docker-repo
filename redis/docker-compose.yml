@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  redis:
+    image: redis:latest
+    restart: always
+    container_name: oms-redis
+    command: ["redis-server", "--requirepass", "rkdqnrrncjd1!", "--stop-writes-on-bgsave-error", "no", "--maxmemory-policy", "volatile-ttl", "--client-output-buffer-limit", "normal 0 0 0 replica 268435456 67108864 60 pubsub 268435456 67108864 120"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
