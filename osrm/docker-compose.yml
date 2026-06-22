@@ -33,10 +33,11 @@ services:
       - "5002:8080"
     volumes:
       - "/opt/oms/omeye/omeye-hss/.docker/osrm/nominatim:/data"
+      - "./pbf:/pbf:ro"
     #  - "/opt/oms/omeye/.docker/osrm/nominatim/postgresql.conf:/etc/postgresql/postgresql.conf"
     #command: bash -c "cp /etc/postgresql/postgresql.conf /var/lib/postgresql/16/main/postgresql.conf && /app/start.sh"
     environment:
-      - PBF_URL=file:///data/south-korea.osm.pbf
+      - PBF_URL=file:///pbf/south-korea.osm.pbf
       - NOMINATIM_QUERY_POOL_SIZE=10
       - NOMINATIM_THREADS=32
       - THREADS=64
