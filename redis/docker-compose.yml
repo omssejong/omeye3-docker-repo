@@ -3,7 +3,7 @@ services:
   redis:
     image: redis:latest
     restart: always
-    container_name: oms-redis
+    container_name: omeye-hss-redis
     command: ["redis-server", "--requirepass", "rkdqnrrncjd1!", "--stop-writes-on-bgsave-error", "no", "--maxmemory-policy", "volatile-ttl", "--client-output-buffer-limit", "normal 0 0 0 replica 268435456 67108864 60 pubsub 268435456 67108864 120"]
     ports:
       - "6379:6379"
