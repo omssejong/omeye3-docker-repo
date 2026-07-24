@@ -12,7 +12,7 @@
 
 set -u
 
-BASE_DIR="/opt/oms/omeye/omeye-hss/build-cache/omeye-hss-app/opt/oms/omeye/omeye-hss/.docker/osrm"
+BASE_DIR="/opt/oms/omeye/omeye-hss/.docker/osrm"
 
 # osrm/nominatim 구동에 필요한 파일들
 #   - nominatim_5.1.tar                      (nominatim docker image)
